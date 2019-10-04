@@ -15,6 +15,12 @@
   href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
   rel="stylesheet"
 />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
@@ -50,22 +56,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* A few media query to set some font sizes at different screen sizes.
- * This helps automate a bit of responsiveness.
- * The trick is to use the rem unit for size values, margin and padding.
- * Because rem is relative to the document font size
- * when we scale up or down the font size on the document
- * it will affect all properties using rem units for the values.
-*/
-
-/* I am using the em unit for breakpoints
- * The calculation is the following
- * screen size divided by browser base font size
- * As an example: a breakpoint at 980px
- * 980px / 16px = 61.25em
-*/
-
-/* 1200px / 16px = 75em */
 @media (max-width: 75em) {
   html {
     font-size: 60%;
@@ -371,14 +361,49 @@ input[type=search] {
 	width: 100%;
   height: 30px;
 	letter-spacing: 0px;
-//  border-radius: 35%;
+  border-radius: 35%;
 }
-button{
-  shadow: 1280px;
-  width: 50%;
-  height: 20px;
 
+body {
+  font-family: Arial;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
     </style>
   </head>
   <body>
@@ -403,20 +428,16 @@ button{
 <section id="welcome-section" class="welcome-section">
   <h1>Weather Meter</h1>
   <p>A weather forcast site</p>
-
-<div class = "search">
-<input type=search name=s placeholder="Enter City or Place">
- <button type = "submit"> search</button>
-</div>
-
+  <br>
+  <form class="example" action="https://www.timeanddate.com/weather/india">
+    <input type="text" placeholder="Search for the city!" name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
 </section>
 
-<!-- END WELCOME SECTION -->
-
-<!-- START PROJECTS SECTION -->
 
 <section id="projects" class="projects-section">
-  <h2 class="projects-section-header">Some Strange Weather Pictures</h2>
+  <h2 class="projects-section-header">The climate is changing rapidly!! Explore!</h2>
 
   <div class="projects-grid">
     <a
@@ -431,7 +452,7 @@ button{
       />
       <p class="project-title">
         <span class="code">&lt;</span>
-        Lightening Strike at Night
+        Orrisa (Hud-hud)
         <span class="code">&#47;&gt;</span>
       </p>
     </a>
@@ -447,7 +468,7 @@ button{
       />
       <p class="project-title">
         <span class="code">&lt;</span>
-        Typhoon
+        New-jersey
         <span class="code">&#47;&gt;</span>
       </p>
     </a>
@@ -463,7 +484,7 @@ button{
       />
       <p class="project-title">
         <span class="code">&lt;</span>
-        Tornado
+        Dubai
         <span class="code">&#47;&gt;</span>
       </p>
     </a>
@@ -479,7 +500,7 @@ button{
       />
       <p class="project-title">
         <span class="code">&lt;</span>
-        Tsunami
+        Andaman and Nicobar
         <span class="code">&#47;&gt;</span>
       </p>
     </a>
@@ -509,7 +530,7 @@ button{
       />
       <p class="project-title">
         <span class="code">&lt;</span>
-        Forest Fire
+        Amazon Forest Fire
         <span class="code">&#47;&gt;</span>
       </p>
     </a>
@@ -522,16 +543,6 @@ button{
     >Show all<i class="fas fa-chevron-right"></i
   ></a>
 </section>
-
-<!-- END PROJECTS SECTION -->
-
-<!-- START CONTACT SECTION -->
-
-
-
-<!-- END CONTACT SECTION -->
-
-<!-- START FOOTER SECTION -->
 
 <footer>
   <p>
